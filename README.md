@@ -57,21 +57,21 @@ Every image below is one of the files in
 ### Claude Code
 
 ```text
-/plugin marketplace add diagramium/diagramium-skill
+/plugin marketplace add diagramium/diagramium-skills
 /plugin install diagramium@diagramium
 ```
 
 Or copy the skill folder yourself:
 
 ```bash
-git clone https://github.com/diagramium/diagramium-skill
-cp -r diagramium-skill/skills/diagramium-diagrams ~/.claude/skills/
+git clone https://github.com/diagramium/diagramium-skills
+cp -r diagramium-skills/skills/diagramium-diagrams ~/.claude/skills/
 ```
 
 ### Claude.ai and the Claude desktop app
 
 1. Download `diagramium-diagrams.zip` from the
-   [latest release](https://github.com/diagramium/diagramium-skill/releases/latest).
+   [latest release](https://github.com/diagramium/diagramium-skills/releases/latest).
 2. **Settings → Capabilities → Skills → Upload skill**, and choose the zip.
    (Code execution must be on, which it is by default.)
 
