@@ -1,0 +1,88 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "c4model",
+  "state": {
+    "format": 2,
+    "layout": "grid",
+    "title": "Internet banking — containers",
+    "theme": "linear",
+    "nodes": [
+      {
+        "id": "p",
+        "type": "person",
+        "text": "Customer",
+        "gc": 0,
+        "gr": 0,
+        "x": 120,
+        "y": 110
+      },
+      {
+        "id": "w",
+        "type": "container",
+        "text": "Web app",
+        "tech": "React",
+        "gc": 1,
+        "gr": 0,
+        "x": 380,
+        "y": 110
+      },
+      {
+        "id": "a",
+        "type": "container",
+        "text": "API",
+        "tech": "Spring Boot",
+        "gc": 2,
+        "gr": 0,
+        "x": 640,
+        "y": 110
+      },
+      {
+        "id": "d",
+        "type": "database",
+        "text": "Accounts DB",
+        "tech": "PostgreSQL",
+        "gc": 2,
+        "gr": 1,
+        "x": 640,
+        "y": 270
+      },
+      {
+        "id": "x",
+        "type": "externalSystem",
+        "text": "Core banking",
+        "gc": 3,
+        "gr": 0,
+        "x": 900,
+        "y": 110
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "from": "p",
+        "to": "w",
+        "label": "Uses"
+      },
+      {
+        "id": "e2",
+        "from": "w",
+        "to": "a",
+        "label": "JSON / HTTPS"
+      },
+      {
+        "id": "e3",
+        "from": "a",
+        "to": "d",
+        "label": "Reads and writes"
+      },
+      {
+        "id": "e4",
+        "from": "a",
+        "to": "x",
+        "label": "Calls",
+        "anim": "flow"
+      }
+    ]
+  }
+}

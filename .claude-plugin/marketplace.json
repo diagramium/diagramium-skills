@@ -1,0 +1,15 @@
+{
+  "name": "diagramium",
+  "owner": { "name": "DhuRee Labs Inc.", "url": "https://www.diagramium.com" },
+  "metadata": {
+    "description": "Editable, themeable, self-narrating diagrams from any request — 27 diagram types for the free Diagramium editor."
+  },
+  "plugins": [
+    {
+      "name": "diagramium",
+      "source": "./",
+      "description": "Create flowcharts, sequence, architecture, ER, UML, mind maps, Gantt, timelines and 19 more diagram types as editable Diagramium files, in 46 themes, with optional step-by-step narration.",
+      "category": "productivity"
+    }
+  ]
+}

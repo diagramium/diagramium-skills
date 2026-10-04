@@ -1,0 +1,116 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "sequence",
+  "state": {
+    "title": "Signing in with a password",
+    "theme": "quartz",
+    "actors": [
+      {
+        "id": "user",
+        "kind": "actor",
+        "name": "User"
+      },
+      {
+        "id": "app",
+        "name": "Web app"
+      },
+      {
+        "id": "api",
+        "kind": "control",
+        "name": "Auth API"
+      },
+      {
+        "id": "db",
+        "kind": "database",
+        "name": "Users DB"
+      }
+    ],
+    "items": [
+      {
+        "id": "m1",
+        "type": "message",
+        "from": "user",
+        "to": "app",
+        "text": "Enter email and password",
+        "style": "sync"
+      },
+      {
+        "id": "m2",
+        "type": "message",
+        "from": "app",
+        "to": "api",
+        "text": "POST /login",
+        "style": "sync"
+      },
+      {
+        "id": "m3",
+        "type": "message",
+        "from": "api",
+        "to": "db",
+        "text": "Find user by email",
+        "style": "sync"
+      },
+      {
+        "id": "m4",
+        "type": "message",
+        "from": "db",
+        "to": "api",
+        "text": "Password hash",
+        "style": "reply"
+      },
+      {
+        "id": "f1",
+        "type": "fragStart",
+        "kind": "alt",
+        "label": "password matches"
+      },
+      {
+        "id": "m5",
+        "type": "message",
+        "from": "api",
+        "to": "app",
+        "text": "Session token",
+        "style": "reply"
+      },
+      {
+        "id": "f2",
+        "type": "fragElse",
+        "label": "wrong password"
+      },
+      {
+        "id": "m6",
+        "type": "message",
+        "from": "api",
+        "to": "app",
+        "text": "401 Unauthorized",
+        "style": "reply"
+      },
+      {
+        "id": "f3",
+        "type": "fragEnd"
+      },
+      {
+        "id": "n1",
+        "type": "note",
+        "pos": "over",
+        "actor": "user",
+        "actor2": "app",
+        "text": "Everything travels over HTTPS"
+      }
+    ],
+    "narration": {
+      "1": "The user types their email and password into the sign-in form.",
+      "2": "The web app sends those credentials to the authentication API.",
+      "3": "The API looks the user up by email address.",
+      "4": "The database returns the stored password hash, never the password itself.",
+      "5": "Now there are two possible outcomes.",
+      "6": "If the hash matches, the API issues a session token.",
+      "7": "Otherwise…",
+      "8": "…it refuses with a 401, and says nothing about which part was wrong.",
+      "9": "That is the whole exchange.",
+      "10": "And every one of these messages travels encrypted.",
+      "__why3": "Looking up by email first means the password is only ever compared, never searched for."
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "conceptmap",
+  "state": {
+    "format": 2,
+    "layout": "grid",
+    "title": "Photosynthesis",
+    "theme": "forest",
+    "nodes": [
+      {
+        "id": "c1",
+        "type": "concept",
+        "text": "Plants",
+        "gc": 1,
+        "gr": 0,
+        "x": 380,
+        "y": 110
+      },
+      {
+        "id": "c2",
+        "type": "concept",
+        "text": "Sunlight",
+        "gc": 0,
+        "gr": 1,
+        "x": 120,
+        "y": 270
+      },
+      {
+        "id": "c3",
+        "type": "concept",
+        "text": "Glucose",
+        "gc": 1,
+        "gr": 2,
+        "x": 380,
+        "y": 430
+      },
+      {
+        "id": "c4",
+        "type": "subtopic",
+        "text": "Chlorophyll",
+        "gc": 2,
+        "gr": 1,
+        "x": 640,
+        "y": 270
+      },
+      {
+        "id": "c5",
+        "type": "ellipse",
+        "text": "Oak leaf",
+        "gc": 2,
+        "gr": 0,
+        "x": 640,
+        "y": 110
+      }
+    ],
+    "edges": [
+      {
+        "id": "r1",
+        "from": "c1",
+        "to": "c2",
+        "label": "capture"
+      },
+      {
+        "id": "r2",
+        "from": "c1",
+        "to": "c3",
+        "label": "make"
+      },
+      {
+        "id": "r3",
+        "from": "c1",
+        "to": "c4",
+        "label": "contain"
+      },
+      {
+        "id": "r4",
+        "from": "c5",
+        "to": "c1",
+        "label": "is part of"
+      }
+    ],
+    "focusQuestion": "How do plants make food?"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "orgchart",
+  "state": {
+    "title": "Product organisation",
+    "theme": "executive",
+    "people": [
+      {
+        "id": "ceo",
+        "name": "Ana Ruiz",
+        "title": "Chief Executive"
+      },
+      {
+        "id": "cpo",
+        "name": "Ben Okafor",
+        "title": "Chief Product Officer",
+        "parent": "ceo",
+        "dept": "Product"
+      },
+      {
+        "id": "cto",
+        "name": "Chen Wei",
+        "title": "Chief Technology Officer",
+        "parent": "ceo",
+        "dept": "Engineering"
+      },
+      {
+        "id": "des",
+        "name": "Design",
+        "kind": "department",
+        "parent": "cpo"
+      },
+      {
+        "id": "pm",
+        "name": "Dana Kim",
+        "title": "Group PM",
+        "parent": "cpo"
+      },
+      {
+        "id": "plat",
+        "name": "Platform",
+        "kind": "department",
+        "parent": "cto"
+      },
+      {
+        "id": "sre",
+        "name": "Open role",
+        "title": "Staff SRE",
+        "kind": "vacant",
+        "parent": "cto"
+      }
+    ],
+    "narration": {
+      "1": "Ana leads the company.",
+      "2": "Ben owns what we build.",
+      "3": "Chen owns how we build it.",
+      "4": "Design sits inside product.",
+      "5": "Dana coordinates the product managers.",
+      "6": "The platform team keeps everything running.",
+      "7": "And we are hiring a staff site-reliability engineer."
+    }
+  }
+}

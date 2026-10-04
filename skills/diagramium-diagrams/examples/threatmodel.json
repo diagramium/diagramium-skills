@@ -1,0 +1,81 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "threatmodel",
+  "state": {
+    "title": "Login service — STRIDE",
+    "theme": "obsidian",
+    "nodes": [
+      {
+        "id": "u",
+        "type": "actor",
+        "text": "User",
+        "x": 200,
+        "y": 300
+      },
+      {
+        "id": "web",
+        "type": "dfProcess",
+        "text": "Login API",
+        "x": 620,
+        "y": 300,
+        "threats": [
+          {
+            "id": "t1",
+            "stride": "S",
+            "sev": "high",
+            "title": "Credential stuffing",
+            "mitigation": "Rate limits and breached-password checks"
+          }
+        ]
+      },
+      {
+        "id": "db",
+        "type": "datastore",
+        "text": "Users DB",
+        "x": 900,
+        "y": 300,
+        "threats": [
+          {
+            "id": "t2",
+            "stride": "I",
+            "sev": "critical",
+            "title": "Hash dump",
+            "mitigation": "Argon2id hashes, encrypted at rest"
+          }
+        ]
+      },
+      {
+        "id": "tb",
+        "type": "trustBoundary",
+        "text": "Data centre",
+        "x": 760,
+        "y": 310,
+        "w": 560,
+        "h": 340,
+        "back": true
+      }
+    ],
+    "edges": [
+      {
+        "id": "f1",
+        "from": "u",
+        "to": "web",
+        "label": "email + password"
+      },
+      {
+        "id": "f2",
+        "from": "web",
+        "to": "db",
+        "label": "lookup"
+      },
+      {
+        "id": "a1",
+        "from": "u",
+        "to": "db",
+        "label": "SQL injection attempt",
+        "attack": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "mindmap",
+  "state": {
+    "title": "Launch plan",
+    "theme": "canvas",
+    "rootId": "r",
+    "nodes": [
+      {
+        "id": "r",
+        "text": "Product launch",
+        "shape": "ellipse"
+      },
+      {
+        "id": "m",
+        "text": "Marketing",
+        "parent": "r",
+        "side": "left",
+        "color": "#6d7cff"
+      },
+      {
+        "id": "m1",
+        "text": "Launch blog post",
+        "parent": "m"
+      },
+      {
+        "id": "m2",
+        "text": "Newsletter",
+        "parent": "m"
+      },
+      {
+        "id": "e",
+        "text": "Engineering",
+        "parent": "r",
+        "side": "right",
+        "color": "#10b981"
+      },
+      {
+        "id": "e1",
+        "text": "Feature flags",
+        "parent": "e"
+      },
+      {
+        "id": "e2",
+        "text": "Load testing",
+        "parent": "e"
+      },
+      {
+        "id": "s",
+        "text": "Support",
+        "parent": "r",
+        "side": "right",
+        "color": "#f59e0b"
+      },
+      {
+        "id": "s1",
+        "text": "Help-centre articles",
+        "parent": "s"
+      }
+    ],
+    "links": [
+      {
+        "id": "l1",
+        "from": "m1",
+        "to": "e1",
+        "label": "announce what ships",
+        "style": "dashed"
+      }
+    ]
+  }
+}

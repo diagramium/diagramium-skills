@@ -1,0 +1,72 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "erdiagram",
+  "state": {
+    "format": 2,
+    "layout": "grid",
+    "title": "Shop schema",
+    "theme": "drafting",
+    "nodes": [
+      {
+        "id": "t1",
+        "type": "erEntity",
+        "text": "customers\n--\nPK id\nname\nemail",
+        "gc": 0,
+        "gr": 0,
+        "x": 120,
+        "y": 110
+      },
+      {
+        "id": "t2",
+        "type": "erEntity",
+        "text": "orders\n--\nPK id\nFK customer_id\ncreated_at",
+        "gc": 1,
+        "gr": 0,
+        "x": 380,
+        "y": 110
+      },
+      {
+        "id": "t3",
+        "type": "erEntity",
+        "text": "order_items\n--\nPK id\nFK order_id\nFK product_id\nqty",
+        "gc": 2,
+        "gr": 0,
+        "x": 640,
+        "y": 110
+      },
+      {
+        "id": "t4",
+        "type": "erEntity",
+        "text": "products\n--\nPK id\nname\nprice",
+        "gc": 2,
+        "gr": 1.5,
+        "x": 640,
+        "y": 350.0
+      }
+    ],
+    "edges": [
+      {
+        "id": "r1",
+        "from": "t1",
+        "to": "t2",
+        "kind": "oneToMany",
+        "label": "places"
+      },
+      {
+        "id": "r2",
+        "from": "t2",
+        "to": "t3",
+        "kind": "oneToMany",
+        "label": "contains"
+      },
+      {
+        "id": "r3",
+        "from": "t4",
+        "to": "t3",
+        "kind": "oneToMany",
+        "label": "appears in"
+      }
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "flowchart",
+  "state": {
+    "format": 2,
+    "layout": "grid",
+    "title": "Password reset",
+    "theme": "doodle",
+    "nodes": [
+      {
+        "id": "n1",
+        "type": "start",
+        "text": "Request a reset",
+        "gc": 0,
+        "gr": 0,
+        "x": 120,
+        "y": 110
+      },
+      {
+        "id": "n2",
+        "type": "process",
+        "text": "Email a reset link",
+        "gc": 0,
+        "gr": 1,
+        "x": 120,
+        "y": 270
+      },
+      {
+        "id": "n3",
+        "type": "decision",
+        "text": "Link still valid?",
+        "gc": 0,
+        "gr": 2,
+        "x": 120,
+        "y": 430
+      },
+      {
+        "id": "n4",
+        "type": "process",
+        "text": "Choose a new password",
+        "gc": 0,
+        "gr": 3,
+        "x": 120,
+        "y": 590
+      },
+      {
+        "id": "n5",
+        "type": "end",
+        "text": "Signed in",
+        "gc": 0,
+        "gr": 4,
+        "x": 120,
+        "y": 750
+      },
+      {
+        "id": "n6",
+        "type": "process",
+        "text": "Show 'link expired'",
+        "gc": 1,
+        "gr": 2,
+        "x": 380,
+        "y": 430
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "from": "n1",
+        "to": "n2"
+      },
+      {
+        "id": "e2",
+        "from": "n2",
+        "to": "n3"
+      },
+      {
+        "id": "e3",
+        "from": "n3",
+        "to": "n4",
+        "label": "yes"
+      },
+      {
+        "id": "e4",
+        "from": "n4",
+        "to": "n5"
+      },
+      {
+        "id": "e5",
+        "from": "n3",
+        "to": "n6",
+        "label": "no",
+        "style": "dashed"
+      },
+      {
+        "id": "e6",
+        "from": "n6",
+        "to": "n2",
+        "label": "send a new link",
+        "style": "dashed"
+      }
+    ]
+  }
+}

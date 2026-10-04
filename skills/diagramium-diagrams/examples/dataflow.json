@@ -1,0 +1,84 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "dataflow",
+  "state": {
+    "format": 2,
+    "layout": "grid",
+    "title": "Payroll — level 1",
+    "theme": "quartz",
+    "nodes": [
+      {
+        "id": "emp",
+        "type": "entity",
+        "text": "Employee",
+        "gc": 0,
+        "gr": 0,
+        "x": 120,
+        "y": 110
+      },
+      {
+        "id": "p1",
+        "type": "dfProcess",
+        "text": "Record hours",
+        "gc": 1,
+        "gr": 0,
+        "x": 380,
+        "y": 110
+      },
+      {
+        "id": "ts",
+        "type": "datastore",
+        "text": "Timesheets",
+        "gc": 1,
+        "gr": 1,
+        "x": 380,
+        "y": 270
+      },
+      {
+        "id": "p2",
+        "type": "dfProcess",
+        "text": "Calculate pay",
+        "gc": 2,
+        "gr": 1,
+        "x": 640,
+        "y": 270
+      },
+      {
+        "id": "bank",
+        "type": "entity",
+        "text": "Bank",
+        "gc": 3,
+        "gr": 1,
+        "x": 900,
+        "y": 270
+      }
+    ],
+    "edges": [
+      {
+        "id": "f1",
+        "from": "emp",
+        "to": "p1",
+        "label": "hours worked"
+      },
+      {
+        "id": "f2",
+        "from": "p1",
+        "to": "ts",
+        "label": "timesheet"
+      },
+      {
+        "id": "f3",
+        "from": "ts",
+        "to": "p2",
+        "label": "approved hours"
+      },
+      {
+        "id": "f4",
+        "from": "p2",
+        "to": "bank",
+        "label": "payment file"
+      }
+    ]
+  }
+}

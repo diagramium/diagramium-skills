@@ -1,0 +1,135 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "architecture",
+  "state": {
+    "title": "Online store — production",
+    "theme": "orbit",
+    "nodes": [
+      {
+        "id": "web",
+        "type": "webapp",
+        "text": "Web app",
+        "x": 140,
+        "y": 300
+      },
+      {
+        "id": "cdn",
+        "type": "cdn",
+        "text": "CDN",
+        "x": 140,
+        "y": 140
+      },
+      {
+        "id": "gw",
+        "type": "apigateway",
+        "text": "API gateway",
+        "x": 380,
+        "y": 300,
+        "parentId": "grp"
+      },
+      {
+        "id": "svc",
+        "type": "service",
+        "text": "Orders service",
+        "x": 600,
+        "y": 230,
+        "parentId": "grp"
+      },
+      {
+        "id": "auth",
+        "type": "auth",
+        "text": "Auth",
+        "x": 600,
+        "y": 380,
+        "parentId": "grp"
+      },
+      {
+        "id": "q",
+        "type": "queue",
+        "text": "Events queue",
+        "x": 820,
+        "y": 230,
+        "parentId": "grp"
+      },
+      {
+        "id": "db",
+        "type": "database",
+        "text": "Orders DB",
+        "x": 820,
+        "y": 380,
+        "parentId": "grp"
+      },
+      {
+        "id": "ai",
+        "type": "ai",
+        "text": "Fraud model",
+        "x": 1120,
+        "y": 230
+      },
+      {
+        "id": "grp",
+        "type": "group",
+        "text": "Production VPC",
+        "x": 640,
+        "y": 300,
+        "w": 760,
+        "h": 400,
+        "back": true
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "from": "cdn",
+        "to": "web"
+      },
+      {
+        "id": "e2",
+        "from": "web",
+        "to": "gw",
+        "label": "HTTPS"
+      },
+      {
+        "id": "e3",
+        "from": "gw",
+        "to": "svc"
+      },
+      {
+        "id": "e4",
+        "from": "gw",
+        "to": "auth"
+      },
+      {
+        "id": "e5",
+        "from": "svc",
+        "to": "q",
+        "anim": "flow"
+      },
+      {
+        "id": "e6",
+        "from": "svc",
+        "to": "db"
+      },
+      {
+        "id": "e7",
+        "from": "q",
+        "to": "ai",
+        "label": "score order",
+        "anim": "laser"
+      }
+    ],
+    "narration": {
+      "1": "Customers reach the store through the web app.",
+      "2": "Static files come from the CDN, close to wherever the customer is.",
+      "3": "Every API call enters through one gateway.",
+      "4": "The orders service does the real work.",
+      "5": "Sign-in is handled by a separate auth service.",
+      "6": "Each new order is published to an events queue.",
+      "7": "And stored in the orders database.",
+      "8": "A fraud model scores each order from the queue, outside the main path.",
+      "9": "Everything inside this boundary runs in the production network.",
+      "__why6": "The queue lets slow work like fraud scoring happen without making checkout wait."
+    }
+  }
+}

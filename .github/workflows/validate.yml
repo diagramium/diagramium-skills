@@ -1,0 +1,20 @@
+name: validate
+on:
+  push:
+  pull_request:
+jobs:
+  examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Examples are current
+        run: |
+          python3 tools/make_examples.py
+          git diff --exit-code skills/diagramium-diagrams/examples
+      - name: Every example validates
+        run: python3 skills/diagramium-diagrams/scripts/validate.py skills/diagramium-diagrams/examples/*.json
+      - name: Package builds
+        run: python3 tools/package.py

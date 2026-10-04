@@ -1,0 +1,100 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "statemachine",
+  "state": {
+    "format": 2,
+    "layout": "grid",
+    "title": "Order lifecycle",
+    "theme": "obsidian",
+    "nodes": [
+      {
+        "id": "s0",
+        "type": "initial",
+        "text": "",
+        "gc": 0,
+        "gr": 1,
+        "x": 120,
+        "y": 270
+      },
+      {
+        "id": "s1",
+        "type": "simple",
+        "text": "Pending",
+        "entry": "reserve stock",
+        "gc": 1,
+        "gr": 1,
+        "x": 380,
+        "y": 270
+      },
+      {
+        "id": "s2",
+        "type": "simple",
+        "text": "Paid",
+        "gc": 2,
+        "gr": 1,
+        "x": 640,
+        "y": 270
+      },
+      {
+        "id": "s3",
+        "type": "simple",
+        "text": "Shipped",
+        "gc": 3,
+        "gr": 1,
+        "x": 900,
+        "y": 270
+      },
+      {
+        "id": "s4",
+        "type": "simple",
+        "text": "Cancelled",
+        "entry": "release stock",
+        "gc": 2,
+        "gr": 2,
+        "x": 640,
+        "y": 430
+      },
+      {
+        "id": "s5",
+        "type": "final",
+        "text": "",
+        "gc": 4,
+        "gr": 1,
+        "x": 1160,
+        "y": 270
+      }
+    ],
+    "edges": [
+      {
+        "id": "t1",
+        "from": "s0",
+        "to": "s1"
+      },
+      {
+        "id": "t2",
+        "from": "s1",
+        "to": "s2",
+        "label": "payment ok"
+      },
+      {
+        "id": "t3",
+        "from": "s2",
+        "to": "s3",
+        "label": "dispatched"
+      },
+      {
+        "id": "t4",
+        "from": "s1",
+        "to": "s4",
+        "label": "timeout / cancel"
+      },
+      {
+        "id": "t5",
+        "from": "s3",
+        "to": "s5",
+        "label": "delivered"
+      }
+    ]
+  }
+}

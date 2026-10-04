@@ -1,0 +1,124 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "network",
+  "state": {
+    "format": 2,
+    "layout": "grid",
+    "title": "Small office network",
+    "theme": "terminal",
+    "nodes": [
+      {
+        "id": "inet",
+        "type": "internet",
+        "text": "Internet",
+        "gc": 1,
+        "gr": 0,
+        "x": 380,
+        "y": 110
+      },
+      {
+        "id": "fw",
+        "type": "firewall",
+        "text": "Firewall",
+        "gc": 1,
+        "gr": 1,
+        "x": 380,
+        "y": 270
+      },
+      {
+        "id": "rt",
+        "type": "router",
+        "text": "Router",
+        "gc": 1,
+        "gr": 2,
+        "x": 380,
+        "y": 430
+      },
+      {
+        "id": "sw",
+        "type": "switch",
+        "text": "Switch",
+        "gc": 1,
+        "gr": 3,
+        "x": 380,
+        "y": 590
+      },
+      {
+        "id": "wifi",
+        "type": "wifi",
+        "text": "Wi-Fi",
+        "gc": 0,
+        "gr": 3,
+        "x": 120,
+        "y": 590
+      },
+      {
+        "id": "srv",
+        "type": "server",
+        "text": "File server",
+        "gc": 2,
+        "gr": 3,
+        "x": 640,
+        "y": 590
+      },
+      {
+        "id": "pc",
+        "type": "workstation",
+        "text": "Desks x12",
+        "gc": 1,
+        "gr": 4,
+        "x": 380,
+        "y": 750
+      },
+      {
+        "id": "lap",
+        "type": "mobile",
+        "text": "Laptops",
+        "gc": 0,
+        "gr": 4,
+        "x": 120,
+        "y": 750
+      }
+    ],
+    "edges": [
+      {
+        "id": "l1",
+        "from": "inet",
+        "to": "fw",
+        "kind": "fiber"
+      },
+      {
+        "id": "l2",
+        "from": "fw",
+        "to": "rt"
+      },
+      {
+        "id": "l3",
+        "from": "rt",
+        "to": "sw"
+      },
+      {
+        "id": "l4",
+        "from": "sw",
+        "to": "wifi"
+      },
+      {
+        "id": "l5",
+        "from": "sw",
+        "to": "srv"
+      },
+      {
+        "id": "l6",
+        "from": "sw",
+        "to": "pc"
+      },
+      {
+        "id": "l7",
+        "from": "wifi",
+        "to": "lap",
+        "kind": "wireless"
+      }
+    ]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "bpmn",
+  "state": {
+    "title": "Leave request",
+    "theme": "quartz",
+    "nodes": [
+      {
+        "id": "s",
+        "type": "bpmnStart",
+        "text": "Leave requested",
+        "x": 140,
+        "y": 190,
+        "parentId": "pool"
+      },
+      {
+        "id": "t",
+        "type": "userTask",
+        "text": "Manager reviews",
+        "x": 300,
+        "y": 190,
+        "parentId": "pool"
+      },
+      {
+        "id": "g",
+        "type": "bpmnGwX",
+        "text": "Approved?",
+        "x": 470,
+        "y": 190,
+        "parentId": "pool"
+      },
+      {
+        "id": "t2",
+        "type": "serviceTask",
+        "text": "Book leave",
+        "x": 650,
+        "y": 190,
+        "parentId": "pool"
+      },
+      {
+        "id": "en",
+        "type": "bpmnEnd",
+        "text": "Done",
+        "x": 850,
+        "y": 190,
+        "parentId": "pool"
+      },
+      {
+        "id": "er",
+        "type": "sendTask",
+        "text": "Notify refusal",
+        "x": 650,
+        "y": 310,
+        "parentId": "pool"
+      },
+      {
+        "id": "pool",
+        "type": "boundary",
+        "text": "HR",
+        "x": 520,
+        "y": 250,
+        "w": 900,
+        "h": 300,
+        "back": true
+      }
+    ],
+    "edges": [
+      {
+        "id": "f1",
+        "from": "s",
+        "to": "t"
+      },
+      {
+        "id": "f2",
+        "from": "t",
+        "to": "g"
+      },
+      {
+        "id": "f3",
+        "from": "g",
+        "to": "t2",
+        "label": "yes"
+      },
+      {
+        "id": "f4",
+        "from": "t2",
+        "to": "en"
+      },
+      {
+        "id": "f5",
+        "from": "g",
+        "to": "er",
+        "label": "no"
+      },
+      {
+        "id": "f6",
+        "from": "er",
+        "to": "en"
+      }
+    ]
+  }
+}

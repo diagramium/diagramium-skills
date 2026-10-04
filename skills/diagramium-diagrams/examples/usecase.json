@@ -1,0 +1,92 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "usecase",
+  "state": {
+    "title": "Library app",
+    "theme": "canvas",
+    "nodes": [
+      {
+        "id": "m",
+        "type": "actor",
+        "text": "Member",
+        "x": 160,
+        "y": 220
+      },
+      {
+        "id": "l",
+        "type": "actor",
+        "text": "Librarian",
+        "x": 880,
+        "y": 380
+      },
+      {
+        "id": "u1",
+        "type": "usecase",
+        "text": "Search catalogue",
+        "x": 520,
+        "y": 150
+      },
+      {
+        "id": "u2",
+        "type": "usecase",
+        "text": "Borrow a book",
+        "x": 520,
+        "y": 260
+      },
+      {
+        "id": "u3",
+        "type": "usecase",
+        "text": "Sign in",
+        "x": 520,
+        "y": 370
+      },
+      {
+        "id": "u4",
+        "type": "usecase",
+        "text": "Add a book",
+        "x": 520,
+        "y": 470
+      },
+      {
+        "id": "sys",
+        "type": "boundary",
+        "text": "Library app",
+        "x": 520,
+        "y": 310,
+        "w": 420,
+        "h": 460,
+        "back": true
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "from": "m",
+        "to": "u1"
+      },
+      {
+        "id": "e2",
+        "from": "m",
+        "to": "u2"
+      },
+      {
+        "id": "e3",
+        "from": "u2",
+        "to": "u3",
+        "kind": "include",
+        "label": "«include»"
+      },
+      {
+        "id": "e4",
+        "from": "l",
+        "to": "u4"
+      },
+      {
+        "id": "e5",
+        "from": "l",
+        "to": "u3"
+      }
+    ]
+  }
+}

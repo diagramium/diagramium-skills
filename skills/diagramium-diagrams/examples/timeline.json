@@ -1,0 +1,60 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "timeline",
+  "state": {
+    "title": "From idea to version 1",
+    "theme": "editorial",
+    "track": "chevron",
+    "showGaps": true,
+    "layout": "straight",
+    "events": [
+      {
+        "id": "e1",
+        "date": "2025-01",
+        "title": "Idea",
+        "desc": "A weekend prototype",
+        "emoji": "💡"
+      },
+      {
+        "id": "e2",
+        "date": "2025-04",
+        "title": "First users",
+        "kind": "milestone"
+      },
+      {
+        "id": "e3",
+        "date": "Q3 2025",
+        "title": "Public beta",
+        "kind": "release"
+      },
+      {
+        "id": "e4",
+        "date": "2026-01-15",
+        "title": "Version 1.0",
+        "kind": "release",
+        "desc": "General availability"
+      },
+      {
+        "id": "e5",
+        "date": "2026-06-30",
+        "title": "Security audit",
+        "kind": "deadline"
+      }
+    ],
+    "eras": [
+      {
+        "id": "p1",
+        "label": "Build",
+        "from": "e1",
+        "to": "e2"
+      },
+      {
+        "id": "p2",
+        "label": "Grow",
+        "from": "e3",
+        "to": "e5"
+      }
+    ]
+  }
+}

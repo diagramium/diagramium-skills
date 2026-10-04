@@ -1,0 +1,83 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "kanban",
+  "state": {
+    "title": "Sprint 12",
+    "theme": "stickynote",
+    "lanes": [
+      {
+        "id": "todo",
+        "name": "To do",
+        "height": 260
+      },
+      {
+        "id": "doing",
+        "name": "In progress",
+        "height": 260
+      },
+      {
+        "id": "review",
+        "name": "Review",
+        "height": 260
+      },
+      {
+        "id": "done",
+        "name": "Done",
+        "height": 260
+      }
+    ],
+    "nodes": [
+      {
+        "id": "k1",
+        "type": "process",
+        "text": "Sign-in page",
+        "laneId": "todo",
+        "yInLane": 50,
+        "x": 0
+      },
+      {
+        "id": "k2",
+        "type": "process",
+        "text": "Password reset",
+        "laneId": "todo",
+        "yInLane": 130,
+        "x": 0
+      },
+      {
+        "id": "k3",
+        "type": "process",
+        "text": "Session API",
+        "laneId": "doing",
+        "yInLane": 50,
+        "x": 0,
+        "animFx": "pulse"
+      },
+      {
+        "id": "k4",
+        "type": "process",
+        "text": "Rate limiting",
+        "laneId": "review",
+        "yInLane": 50,
+        "x": 0
+      },
+      {
+        "id": "k5",
+        "type": "process",
+        "text": "Project setup",
+        "laneId": "done",
+        "yInLane": 50,
+        "x": 0
+      },
+      {
+        "id": "k6",
+        "type": "process",
+        "text": "CI pipeline",
+        "laneId": "done",
+        "yInLane": 130,
+        "x": 0
+      }
+    ],
+    "edges": []
+  }
+}

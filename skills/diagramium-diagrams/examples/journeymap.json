@@ -1,0 +1,126 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "journeymap",
+  "state": {
+    "title": "New-customer onboarding",
+    "theme": "forest",
+    "stageWidth": 200,
+    "stages": [
+      {
+        "id": "st1",
+        "name": "Sign up"
+      },
+      {
+        "id": "st2",
+        "name": "Set up"
+      },
+      {
+        "id": "st3",
+        "name": "First win"
+      },
+      {
+        "id": "st4",
+        "name": "Habit"
+      }
+    ],
+    "rows": [
+      {
+        "id": "r1",
+        "name": "Doing",
+        "kind": "text"
+      },
+      {
+        "id": "r2",
+        "name": "Feeling",
+        "kind": "emotion"
+      },
+      {
+        "id": "r3",
+        "name": "Satisfaction",
+        "kind": "rating"
+      }
+    ],
+    "cells": [
+      {
+        "id": "c1",
+        "rowId": "r1",
+        "stageId": "st1",
+        "text": "Creates an account"
+      },
+      {
+        "id": "c2",
+        "rowId": "r1",
+        "stageId": "st2",
+        "text": "Connects their data"
+      },
+      {
+        "id": "c3",
+        "rowId": "r1",
+        "stageId": "st3",
+        "text": "Ships a first report"
+      },
+      {
+        "id": "c4",
+        "rowId": "r1",
+        "stageId": "st4",
+        "text": "Checks it every Monday"
+      },
+      {
+        "id": "c5",
+        "rowId": "r2",
+        "stageId": "st1",
+        "score": 1
+      },
+      {
+        "id": "c6",
+        "rowId": "r2",
+        "stageId": "st2",
+        "score": -1
+      },
+      {
+        "id": "c7",
+        "rowId": "r2",
+        "stageId": "st3",
+        "score": 2
+      },
+      {
+        "id": "c8",
+        "rowId": "r2",
+        "stageId": "st4",
+        "score": 1
+      },
+      {
+        "id": "c9",
+        "rowId": "r3",
+        "stageId": "st1",
+        "rating": 80
+      },
+      {
+        "id": "c10",
+        "rowId": "r3",
+        "stageId": "st2",
+        "rating": 40
+      },
+      {
+        "id": "c11",
+        "rowId": "r3",
+        "stageId": "st3",
+        "rating": 92
+      },
+      {
+        "id": "c12",
+        "rowId": "r3",
+        "stageId": "st4",
+        "rating": 85
+      }
+    ],
+    "narration": {
+      "1": "Signing up is quick, and people feel good about it.",
+      "2": "Setup is where it hurts: connecting data is the hardest moment.",
+      "3": "Then the first report lands, and that is the moment of delight.",
+      "4": "From there it becomes a weekly habit.",
+      "__why2": "Most churn happens here, so this is the stage worth redesigning first."
+    }
+  }
+}

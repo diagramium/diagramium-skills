@@ -1,0 +1,124 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "swimlane",
+  "state": {
+    "format": 2,
+    "layout": "grid",
+    "title": "Expense approval",
+    "theme": "metro",
+    "lanes": [
+      {
+        "id": "L1",
+        "name": "Employee",
+        "height": 160
+      },
+      {
+        "id": "L2",
+        "name": "Manager",
+        "height": 160
+      },
+      {
+        "id": "L3",
+        "name": "Finance",
+        "height": 160
+      }
+    ],
+    "phases": [
+      {
+        "id": "P1",
+        "label": "Submit",
+        "width": 260
+      },
+      {
+        "id": "P2",
+        "label": "Review",
+        "width": 260
+      },
+      {
+        "id": "P3",
+        "label": "Pay",
+        "width": 260
+      }
+    ],
+    "nodes": [
+      {
+        "id": "a",
+        "type": "start",
+        "text": "Submit receipt",
+        "laneId": "L1",
+        "yInLane": 80,
+        "gc": 0,
+        "x": 120
+      },
+      {
+        "id": "b",
+        "type": "decision",
+        "text": "Within policy?",
+        "laneId": "L2",
+        "yInLane": 80,
+        "gc": 1,
+        "x": 360
+      },
+      {
+        "id": "c",
+        "type": "process",
+        "text": "Reimburse",
+        "laneId": "L3",
+        "yInLane": 80,
+        "gc": 2,
+        "x": 600
+      },
+      {
+        "id": "d",
+        "type": "end",
+        "text": "Paid",
+        "laneId": "L1",
+        "yInLane": 80,
+        "gc": 2,
+        "x": 600
+      },
+      {
+        "id": "r",
+        "type": "process",
+        "text": "Ask for details",
+        "laneId": "L1",
+        "yInLane": 80,
+        "gc": 1,
+        "x": 360
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "from": "a",
+        "to": "b"
+      },
+      {
+        "id": "e2",
+        "from": "b",
+        "to": "c",
+        "label": "yes"
+      },
+      {
+        "id": "e3",
+        "from": "c",
+        "to": "d"
+      },
+      {
+        "id": "e4",
+        "from": "b",
+        "to": "r",
+        "label": "no",
+        "style": "dashed"
+      }
+    ],
+    "narration": {
+      "1": "An employee submits a receipt.",
+      "2": "Their manager checks it against the expense policy.",
+      "3": "If it passes, finance reimburses it.",
+      "4": "And the money lands back with the employee.",
+      "5": "If it does not, the employee is asked for more detail."
+    }
+  }
+}

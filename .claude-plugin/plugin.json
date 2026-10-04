@@ -1,0 +1,10 @@
+{
+  "name": "diagramium",
+  "version": "1.0.0",
+  "description": "Create any diagram as an editable, themeable Diagramium file that presents and narrates itself step by step.",
+  "author": { "name": "DhuRee Labs Inc.", "url": "https://www.diagramium.com" },
+  "homepage": "https://www.diagramium.com",
+  "repository": "https://github.com/diagramium/diagramium-skill",
+  "license": "MIT",
+  "keywords": ["diagrams", "flowchart", "architecture", "uml", "mind-map", "gantt", "presentation", "narration"]
+}

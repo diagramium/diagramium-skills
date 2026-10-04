@@ -1,0 +1,79 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "gantt",
+  "state": {
+    "title": "Q1 website relaunch",
+    "theme": "quartz",
+    "ganttStyle": "premium",
+    "startDate": "2026-01-05",
+    "showCritical": true,
+    "tasks": [
+      {
+        "id": "t1",
+        "name": "Discovery",
+        "start": 0,
+        "days": 5,
+        "done": 100
+      },
+      {
+        "id": "t2",
+        "name": "Design",
+        "start": 5,
+        "days": 10,
+        "done": 60
+      },
+      {
+        "id": "t3",
+        "name": "Content",
+        "start": 5,
+        "days": 15,
+        "done": 20
+      },
+      {
+        "id": "t4",
+        "name": "Build",
+        "start": 15,
+        "days": 12
+      },
+      {
+        "id": "t5",
+        "name": "QA",
+        "start": 27,
+        "days": 4
+      },
+      {
+        "id": "m1",
+        "name": "Launch",
+        "start": 31,
+        "days": 0
+      }
+    ],
+    "deps": [
+      {
+        "from": "t1",
+        "to": "t2"
+      },
+      {
+        "from": "t1",
+        "to": "t3"
+      },
+      {
+        "from": "t2",
+        "to": "t4"
+      },
+      {
+        "from": "t4",
+        "to": "t5"
+      },
+      {
+        "from": "t3",
+        "to": "t5"
+      },
+      {
+        "from": "t5",
+        "to": "m1"
+      }
+    ]
+  }
+}

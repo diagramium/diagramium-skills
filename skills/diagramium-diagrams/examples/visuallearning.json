@@ -1,0 +1,84 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "visuallearning",
+  "state": {
+    "format": 2,
+    "layout": "grid",
+    "title": "How HTTPS keeps you safe",
+    "theme": "drawingbook",
+    "nodes": [
+      {
+        "id": "s1",
+        "type": "spotcard",
+        "text": "The handshake",
+        "blocks": [
+          {
+            "k": "text",
+            "text": "Before any data moves, your browser and the server agree on secret keys."
+          },
+          {
+            "k": "bullets",
+            "text": "Browser says hello\nServer shows its certificate\nThey agree on a session key",
+            "marker": "num"
+          }
+        ],
+        "gc": 0,
+        "gr": 0,
+        "x": 120,
+        "y": 110
+      },
+      {
+        "id": "s2",
+        "type": "spotcard",
+        "text": "Sealed traffic",
+        "blocks": [
+          {
+            "k": "text",
+            "text": "Every request and reply is now encrypted with that session key."
+          },
+          {
+            "k": "diagram",
+            "text": "Browser -> Server\nServer -> Browser"
+          }
+        ],
+        "gc": 1,
+        "gr": 0,
+        "x": 380,
+        "y": 110
+      },
+      {
+        "id": "s3",
+        "type": "spotcard",
+        "text": "Why trust the certificate?",
+        "blocks": [
+          {
+            "k": "text",
+            "text": "A certificate authority your browser already trusts has vouched for the server."
+          }
+        ],
+        "gc": 2,
+        "gr": 0,
+        "x": 640,
+        "y": 110
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "from": "s1",
+        "to": "s2"
+      },
+      {
+        "id": "e2",
+        "from": "s2",
+        "to": "s3"
+      }
+    ],
+    "narration": {
+      "1": "First comes the handshake. Your browser and the server agree on secret keys before anything else moves.",
+      "2": "From then on, every request and every reply is sealed with that session key.",
+      "3": "But why believe the server is who it says it is? Because someone your browser already trusts has vouched for it."
+    }
+  }
+}

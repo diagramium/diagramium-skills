@@ -1,0 +1,56 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "sitemap",
+  "state": {
+    "title": "Marketing site",
+    "theme": "bento",
+    "people": [
+      {
+        "id": "home",
+        "name": "Home"
+      },
+      {
+        "id": "prod",
+        "name": "Product",
+        "kind": "department",
+        "parent": "home"
+      },
+      {
+        "id": "feat",
+        "name": "Features",
+        "parent": "prod"
+      },
+      {
+        "id": "price",
+        "name": "Pricing",
+        "parent": "prod"
+      },
+      {
+        "id": "res",
+        "name": "Resources",
+        "kind": "department",
+        "parent": "home"
+      },
+      {
+        "id": "blog",
+        "name": "Blog",
+        "parent": "res"
+      },
+      {
+        "id": "docs",
+        "name": "Docs",
+        "kind": "contractor",
+        "parent": "res",
+        "title": "docs.example.com"
+      },
+      {
+        "id": "careers",
+        "name": "Careers",
+        "kind": "vacant",
+        "parent": "home",
+        "title": "coming soon"
+      }
+    ]
+  }
+}

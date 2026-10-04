@@ -1,0 +1,137 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "visualstory",
+  "state": {
+    "type": "visual-story",
+    "schemaVersion": 1,
+    "title": "Why we recycle glass",
+    "theme": "quartz",
+    "sceneOrder": [
+      "s1",
+      "s2"
+    ],
+    "scenes": [
+      {
+        "id": "s1",
+        "title": "The problem",
+        "aspectRatio": "16:9",
+        "objects": [
+          {
+            "id": "o1",
+            "type": "text",
+            "x": 120,
+            "y": 90,
+            "width": 1040,
+            "height": 90,
+            "text": "A glass bottle takes a million years to break down",
+            "style": {
+              "fontSize": 44
+            }
+          },
+          {
+            "id": "o2",
+            "type": "shape",
+            "shape": "rounded",
+            "x": 160,
+            "y": 300,
+            "width": 360,
+            "height": 160,
+            "text": "Landfill",
+            "initialVisibility": false
+          },
+          {
+            "id": "o3",
+            "type": "shape",
+            "shape": "rounded",
+            "x": 760,
+            "y": 300,
+            "width": 360,
+            "height": 160,
+            "text": "Recycling plant",
+            "initialVisibility": false
+          },
+          {
+            "id": "o4",
+            "type": "connector",
+            "fromObjectId": "o2",
+            "toObjectId": "o3",
+            "initialVisibility": false
+          }
+        ],
+        "steps": [
+          {
+            "id": "st1",
+            "title": "Landfill",
+            "narration": {
+              "text": "Thrown away, a bottle sits in landfill almost forever."
+            },
+            "actions": [
+              {
+                "id": "a1",
+                "objectId": "o2",
+                "type": "appear"
+              }
+            ]
+          },
+          {
+            "id": "st2",
+            "title": "Recycling",
+            "narration": {
+              "text": "Recycled, it can be melted down and made again."
+            },
+            "actions": [
+              {
+                "id": "a2",
+                "objectId": "o3",
+                "type": "appear"
+              },
+              {
+                "id": "a3",
+                "objectId": "o4",
+                "type": "draw-connector"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "The payoff",
+        "aspectRatio": "16:9",
+        "objects": [
+          {
+            "id": "o5",
+            "type": "bullets",
+            "x": 160,
+            "y": 160,
+            "width": 960,
+            "height": 360,
+            "items": [
+              "Endlessly recyclable",
+              "Saves energy over new glass",
+              "Keeps sand in the ground"
+            ],
+            "initialVisibility": false
+          }
+        ],
+        "steps": [
+          {
+            "id": "st3",
+            "title": "Why it matters",
+            "narration": {
+              "text": "And unlike plastic, glass can be recycled again and again."
+            },
+            "actions": [
+              {
+                "id": "a4",
+                "objectId": "o5",
+                "type": "reveal-text"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

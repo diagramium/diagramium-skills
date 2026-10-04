@@ -1,0 +1,136 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "fishbone",
+  "state": {
+    "format": 2,
+    "layout": "grid",
+    "title": "Why deliveries arrive late",
+    "theme": "marker",
+    "nodes": [
+      {
+        "id": "ef",
+        "type": "effect",
+        "text": "Late deliveries",
+        "gc": 4,
+        "gr": 1,
+        "x": 1160,
+        "y": 270
+      },
+      {
+        "id": "k1",
+        "type": "category",
+        "text": "People",
+        "gc": 1,
+        "gr": 0,
+        "x": 380,
+        "y": 110
+      },
+      {
+        "id": "k2",
+        "type": "category",
+        "text": "Process",
+        "gc": 3,
+        "gr": 0,
+        "x": 900,
+        "y": 110
+      },
+      {
+        "id": "k3",
+        "type": "category",
+        "text": "Vehicles",
+        "gc": 1,
+        "gr": 2,
+        "x": 380,
+        "y": 430
+      },
+      {
+        "id": "k4",
+        "type": "category",
+        "text": "Suppliers",
+        "gc": 3,
+        "gr": 2,
+        "x": 900,
+        "y": 430
+      },
+      {
+        "id": "c1",
+        "type": "cause",
+        "text": "Understaffed weekends",
+        "gc": 0,
+        "gr": 0,
+        "x": 120,
+        "y": 110
+      },
+      {
+        "id": "c2",
+        "type": "cause",
+        "text": "Old trucks",
+        "gc": 0,
+        "gr": 2,
+        "x": 120,
+        "y": 430
+      },
+      {
+        "id": "c3",
+        "type": "cause",
+        "text": "Manual routing",
+        "gc": 2,
+        "gr": 0,
+        "x": 640,
+        "y": 110
+      },
+      {
+        "id": "c4",
+        "type": "cause",
+        "text": "Late raw stock",
+        "gc": 2,
+        "gr": 2,
+        "x": 640,
+        "y": 430
+      }
+    ],
+    "edges": [
+      {
+        "id": "b1",
+        "from": "k1",
+        "to": "ef"
+      },
+      {
+        "id": "b2",
+        "from": "k2",
+        "to": "ef"
+      },
+      {
+        "id": "b3",
+        "from": "k3",
+        "to": "ef"
+      },
+      {
+        "id": "b4",
+        "from": "k4",
+        "to": "ef"
+      },
+      {
+        "id": "b5",
+        "from": "c1",
+        "to": "k1"
+      },
+      {
+        "id": "b6",
+        "from": "c2",
+        "to": "k3"
+      },
+      {
+        "id": "b7",
+        "from": "c3",
+        "to": "k2"
+      },
+      {
+        "id": "b8",
+        "from": "c4",
+        "to": "k4"
+      }
+    ]
+  }
+}

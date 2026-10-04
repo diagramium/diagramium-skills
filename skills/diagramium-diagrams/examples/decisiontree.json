@@ -1,0 +1,87 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "decisiontree",
+  "state": {
+    "format": 2,
+    "layout": "grid",
+    "title": "Should we launch now?",
+    "theme": "editorial",
+    "nodes": [
+      {
+        "id": "d",
+        "type": "decision",
+        "text": "Launch this quarter?",
+        "gc": 0,
+        "gr": 1,
+        "x": 120,
+        "y": 270
+      },
+      {
+        "id": "c",
+        "type": "chance",
+        "text": "Market response",
+        "gc": 1,
+        "gr": 0,
+        "x": 380,
+        "y": 110
+      },
+      {
+        "id": "h",
+        "type": "outcome",
+        "text": "Wait a quarter",
+        "value": 50,
+        "gc": 1,
+        "gr": 2,
+        "x": 380,
+        "y": 430
+      },
+      {
+        "id": "o1",
+        "type": "outcome",
+        "text": "Strong demand",
+        "value": 500,
+        "gc": 2,
+        "gr": 0,
+        "x": 640,
+        "y": 110
+      },
+      {
+        "id": "o2",
+        "type": "outcome",
+        "text": "Weak demand",
+        "value": -200,
+        "gc": 2,
+        "gr": 1,
+        "x": 640,
+        "y": 270
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "from": "d",
+        "to": "c",
+        "label": "launch"
+      },
+      {
+        "id": "e2",
+        "from": "d",
+        "to": "h",
+        "label": "wait"
+      },
+      {
+        "id": "e3",
+        "from": "c",
+        "to": "o1",
+        "prob": 0.6
+      },
+      {
+        "id": "e4",
+        "from": "c",
+        "to": "o2",
+        "prob": 0.4
+      }
+    ]
+  }
+}

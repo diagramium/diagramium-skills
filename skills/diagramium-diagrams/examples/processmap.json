@@ -1,0 +1,116 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "processmap",
+  "state": {
+    "format": 2,
+    "layout": "grid",
+    "title": "Purchase order process",
+    "theme": "executive",
+    "nodes": [
+      {
+        "id": "p1",
+        "type": "start",
+        "text": "Need identified",
+        "gc": 0,
+        "gr": 0,
+        "x": 120,
+        "y": 110
+      },
+      {
+        "id": "p2",
+        "type": "document",
+        "text": "Purchase request",
+        "gc": 1,
+        "gr": 0,
+        "x": 380,
+        "y": 110
+      },
+      {
+        "id": "p3",
+        "type": "decision",
+        "text": "Over budget limit?",
+        "gc": 2,
+        "gr": 0,
+        "x": 640,
+        "y": 110
+      },
+      {
+        "id": "p4",
+        "type": "process",
+        "text": "Director approval",
+        "gc": 2,
+        "gr": 1,
+        "x": 640,
+        "y": 270
+      },
+      {
+        "id": "p5",
+        "type": "process",
+        "text": "Issue purchase order",
+        "gc": 3,
+        "gr": 0,
+        "x": 900,
+        "y": 110
+      },
+      {
+        "id": "p6",
+        "type": "database",
+        "text": "ERP",
+        "gc": 3,
+        "gr": 1,
+        "x": 900,
+        "y": 270
+      },
+      {
+        "id": "p7",
+        "type": "end",
+        "text": "Goods received",
+        "gc": 4,
+        "gr": 0,
+        "x": 1160,
+        "y": 110
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "from": "p1",
+        "to": "p2"
+      },
+      {
+        "id": "e2",
+        "from": "p2",
+        "to": "p3"
+      },
+      {
+        "id": "e3",
+        "from": "p3",
+        "to": "p4",
+        "label": "yes"
+      },
+      {
+        "id": "e4",
+        "from": "p3",
+        "to": "p5",
+        "label": "no"
+      },
+      {
+        "id": "e5",
+        "from": "p4",
+        "to": "p5"
+      },
+      {
+        "id": "e6",
+        "from": "p5",
+        "to": "p6",
+        "style": "dashed"
+      },
+      {
+        "id": "e7",
+        "from": "p5",
+        "to": "p7"
+      }
+    ]
+  }
+}

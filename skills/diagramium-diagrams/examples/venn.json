@@ -1,0 +1,58 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "venn",
+  "state": {
+    "title": "What a product designer knows",
+    "theme": "glassmorphism",
+    "sets": [
+      {
+        "id": "s1",
+        "label": "Design",
+        "cx": 470,
+        "cy": 248,
+        "r": 150
+      },
+      {
+        "id": "s2",
+        "label": "Engineering",
+        "cx": 550,
+        "cy": 386,
+        "r": 150
+      },
+      {
+        "id": "s3",
+        "label": "Business",
+        "cx": 390,
+        "cy": 386,
+        "r": 150
+      }
+    ],
+    "items": [
+      {
+        "id": "i1",
+        "text": "Visual craft",
+        "x": 470,
+        "y": 180
+      },
+      {
+        "id": "i2",
+        "text": "APIs",
+        "x": 610,
+        "y": 430
+      },
+      {
+        "id": "i3",
+        "text": "Pricing",
+        "x": 330,
+        "y": 430
+      },
+      {
+        "id": "i4",
+        "text": "Product sense",
+        "x": 470,
+        "y": 340
+      }
+    ]
+  }
+}

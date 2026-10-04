@@ -1,0 +1,70 @@
+{
+  "app": "flow-diagram",
+  "version": 2,
+  "mode": "umlclass",
+  "state": {
+    "format": 2,
+    "layout": "grid",
+    "title": "Ordering domain",
+    "theme": "quartz",
+    "nodes": [
+      {
+        "id": "c1",
+        "type": "umlClass",
+        "text": "Customer\n--\n+ id: UUID\n+ name: String\n--\n+ placeOrder(): Order",
+        "gc": 0,
+        "gr": 0,
+        "x": 120,
+        "y": 110
+      },
+      {
+        "id": "c2",
+        "type": "umlClass",
+        "text": "Order\n--\n+ id: UUID\n+ total: Money\n--\n+ pay(): void",
+        "gc": 1,
+        "gr": 0,
+        "x": 380,
+        "y": 110
+      },
+      {
+        "id": "c3",
+        "type": "umlClass",
+        "text": "OrderLine\n--\n+ qty: int\n+ price: Money",
+        "gc": 2,
+        "gr": 0,
+        "x": 640,
+        "y": 110
+      },
+      {
+        "id": "c4",
+        "type": "umlClass",
+        "text": "VipCustomer\n--\n+ tier: int",
+        "gc": 0,
+        "gr": 1.5,
+        "x": 120,
+        "y": 350.0
+      }
+    ],
+    "edges": [
+      {
+        "id": "r1",
+        "from": "c1",
+        "to": "c2",
+        "kind": "assoc",
+        "label": "places"
+      },
+      {
+        "id": "r2",
+        "from": "c2",
+        "to": "c3",
+        "kind": "compose"
+      },
+      {
+        "id": "r3",
+        "from": "c4",
+        "to": "c1",
+        "kind": "inherit"
+      }
+    ]
+  }
+}
